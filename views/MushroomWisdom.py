@@ -287,4 +287,4 @@ def app():
 
     st.image(r"D:\Mushroom Project\images\mushroom1.jpg", caption="Exploring the Fascinating World of Mushrooms!")
     # Footer with social links
-    st.markdown('<div class="footer">Created with ❤️ by Your Name</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer">Created with ❤️ by Team </div>', unsafe_allow_html=True)

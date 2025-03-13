@@ -96,7 +96,7 @@ def app():
    
 
     st.title(f"Welcome, {st.session_state.current_user}!")
-    st.write("This is your main application.")
+    st.write("")
 
     
     # Sidebar navigation
@@ -163,6 +163,3 @@ except Exception:
     elif page == "📝Sign Up":
         signup()
 # authenticated = query_params.get("authenticated")
-
-
-

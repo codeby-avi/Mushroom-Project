@@ -99,7 +99,7 @@ def app():
         """
     )
     # Footer with social links
-    st.markdown('<div class="footer">Created with ❤️ Avinash Chavan</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer">Created with ❤️Team</div>', unsafe_allow_html=True)
 
     # Footer - Technologies and Acknowledgments
     # st.header("Technologies Behind This Project")

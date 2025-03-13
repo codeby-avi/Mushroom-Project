@@ -340,7 +340,7 @@ def app():
                 
                 plot_metrics(metrics, model, x_test, y_test, class_names)
     # Footer with social links
-    st.markdown('<div class="footer">Created with ❤️ Avinash Chavan</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer">Created with ❤️Team</div>', unsafe_allow_html=True)
 
 
 
