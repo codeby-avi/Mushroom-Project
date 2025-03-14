@@ -112,15 +112,14 @@ def signup():
 
 # Main application
 def app():
-   
-
+    
     st.title(f"Welcome, {st.session_state.current_user}!")
     st.write("")
 
     
     # Sidebar navigation
     with st.sidebar:
-       
+
         selected = option_menu(
             menu_title="Mushroom Classifier 🍄",  # Sidebar title
             options=["Home", "Edibility Checker", "Mushroom ML Lab", "Mushroom Wisdom",  "Gallery"],  # Menu options

@@ -43,15 +43,49 @@ def app():
         )
 
     # Project Overview Section
-    st.header("🌟 Project Overview")
+    st.header("🚀 Project Overview")
     st.write(
         """
-        The **Mushroom Classification Project** focuses on differentiating between edible and poisonous mushrooms using machine learning. This is achieved through two unique models:
+        **🍄 Mushroom Classification** is a vital task that involves distinguishing between edible and poisonous mushrooms.  
+        This project leverages **machine learning** 🤖 techniques to automatically classify mushrooms based on their features.  
+        Accurate classification of mushrooms is essential to ensure the **safety** 🛡️ of people, as many mushrooms can be **toxic** ☠️ or **deadly** 💀 if consumed.
+
+        ### 🏆 Our system offers two models:
+        - **🛠️ Model 1**: A **user-friendly tool** where users input characteristics of mushrooms to identify whether they are **edible** 🍽️ or **poisonous** ☠️.  
+        - **📊 Model 2**: A **dataset-based classifier** where users can **upload a mushroom dataset** to predict the classification of various mushrooms.  
+
+        This project is a step towards enhancing **mushroom safety** 🌍 and making classification more **accessible** 🌐.
+        """
+    )
+
+    st.header("How the Models Work")
+    
+    st.subheader("Model 1: User Input-based Classification")
+    st.write(
+        """
+        - This model takes user input of key mushroom features (such as cap color, shape, gill spacing, etc.).
+        - Users can simply fill in the details through a series of dropdown menus or text input.
+        - The model will then classify the mushroom as either **edible** or **poisonous** based on the given characteristics.
         
-        - **Model 1**: A user-friendly classifier where you input physical characteristics of a mushroom (e.g., cap shape, color, and odor) to determine its safety.
-        - **Model 2**: A dataset-driven classifier that processes large datasets of mushroom features and predicts their edibility in batches.
+        This model is perfect for users who encounter mushrooms in the wild and wish to determine if it is safe to eat. The simplicity of input ensures quick and accurate results.
         
-        This system ensures both individual users and researchers can safely classify mushrooms with ease.
+        ### How to use:
+        1. Choose the mushroom's physical characteristics from the dropdown menus (e.g., cap shape, cap color, gill spacing).
+        2. Press the "Classify" button to see if the mushroom is edible or poisonous.
+        """
+    )
+
+    st.subheader("Model 2: Dataset-based Classification")
+    st.write(
+        """
+        - This model allows users to upload a dataset of mushrooms containing their features.
+        - The model will process the data and classify each mushroom as either edible or poisonous.
+        - It is designed for researchers, data scientists, and enthusiasts who have large datasets of mushroom characteristics.
+
+        ### How to use:
+        1. Upload a CSV file containing mushroom features (e.g., cap color, shape, odor, etc.).
+        2. The model will automatically classify each mushroom in the dataset.
+        3. Review the results to determine which mushrooms are safe to eat.
         """
     )
 
@@ -71,6 +105,17 @@ def app():
         - Accurate classification models trained on real-world datasets.
         - A clean, easy-to-use interface with dropdowns and dataset upload options.
         - Visualizations of classification results and feature importance.
+        """
+    )
+
+    st.header("🚀 Future Improvements and Features")
+    st.write(
+        """
+        While the current models are designed to handle mushroom classification based on features and datasets, there are several improvements we are considering for the future:
+
+        - **Real-Time Image Recognition**: We plan to develop a system that can classify mushrooms using real-time images, enabling users to simply snap a picture of a mushroom and get a prediction.
+        - **Model Fine-Tuning**: We aim to improve the accuracy of our models by incorporating more features and training with larger and more diverse datasets.
+        - **Mushroom Identification Community**: We're working on a platform where mushroom enthusiasts and researchers can share and contribute their data to improve the system's accuracy.
         """
     )
 

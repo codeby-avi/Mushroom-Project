@@ -53,8 +53,8 @@ def app():
         The goal of this project is to provide an easy-to-use platform for mushroom enthusiasts, researchers, and foragers to identify mushrooms quickly and safely.
 
         In this project, we have developed two models:
-        - **Model 1**: Input the characteristics of a mushroom to predict if it's edible or poisonous.
-        - **Model 2**: Upload a mushroom dataset and classify multiple mushrooms automatically.
+        - **Model 1**: 🍄  Input the characteristics of a mushroom to predict if it's edible or poisonous.
+        - **Model 2**:  📊 Upload a mushroom dataset and classify multiple mushrooms automatically.
         """
     )
 
@@ -69,50 +69,61 @@ def app():
     st.plotly_chart(fig, use_container_width=True)
 
     # Mushroom Classification Overview
-    st.header("How It Works")
+    st.header("🌟 How It Works")
     st.write(
         """
-        Our project uses two powerful models to classify mushrooms based on their characteristics:
+        Our project uses a **pattern-matching classification model** to identify mushroom edibility based on specific mushroom features.  
+        The system takes user input for mushroom characteristics, encodes them into shorthand codes, and applies a structured pattern-matching algorithm to classify mushrooms.
 
-        1. **User Input-based Classification**:
-            - Users provide details about a mushroom’s features (e.g., cap shape, cap color, odor) via dropdown menus and text inputs.
-            - The model then predicts whether the mushroom is **edible** or **poisonous** based on these inputs.
+        ---
 
-        2. **Dataset-based Classification**:
-            - Users upload a dataset of mushrooms with their features.
-            - The model classifies each mushroom as either edible or poisonous in bulk.
-        
-        **Key Features**:
-        - Fast and accurate predictions.
-        - Easily accessible for both beginners and professionals.
-        """
-    )
+        ## 🍄 **1. Feature-Based Classification**  
+        The model takes the following mushroom attributes as input:  
 
-    # Safety Tips and Warnings
-    st.header("Important Safety Notice")
-    st.write(
-        """
-        Even though this tool uses machine learning to provide accurate predictions, **always exercise caution** when foraging or consuming mushrooms.
-        
-        **Important Tips**:
-        - Do not rely solely on this model for mushroom identification.
-        - Always consult an expert before consuming any wild mushrooms.
+        - **Odor** – Scent of the mushroom (e.g., Almond, Fishy, Foul).  
+            ➡️ Odor is one of the strongest indicators of mushroom edibility. Certain toxic mushrooms have distinct foul or pungent odors.  
+        - **Bruises** – Whether the mushroom bruises easily (Yes/No).  
+            ➡️ Bruising behavior often correlates with the presence of toxic compounds.  
+        - **Gill Color** – The color of the gills under the mushroom cap (e.g., White, Brown, Yellow).  
+            ➡️ Some poisonous mushrooms have specific gill color patterns.  
+        - **Cap Shape** – Shape of the mushroom cap (e.g., Bell, Flat, Convex).  
+            ➡️ Shape is used to identify the mushroom species and predict toxicity.  
+        - **Cap Surface** – Surface texture of the mushroom cap (e.g., Smooth, Scaly).  
+            ➡️ Toxic mushrooms often have irregular or rough cap surfaces.  
+        - **Cap Color** – Color of the mushroom cap (e.g., Red, White, Yellow).  
+            ➡️ Some bright or unusual colors can indicate toxicity.  
+
+        ---
+
+        ## 📊 **2. Prediction Workflow**  
+        **Step-by-Step Process:**  
+        1. User selects mushroom features through the interface.  
+        2. Features are encoded into shorthand codes.  
+        3. Encoded values are evaluated using a ML algorithm.  
+        4. If the pattern matches a known toxic or edible combination, the result is shown instantly.  
+        5. If uncertain, the model defaults to **poisonous** for safety.  
+
+        ---
+
+        ## 🚀 **3. Key Features:**  
+        ✅ **Fast and accurate predictions** using pattern matching.  
+        ✅ **User-friendly interface** for quick input and feedback.  
+        ✅ **Structured encoding** of mushroom attributes for accuracy.  
+        ✅ **Immediate classification** — results in real-time.  
+        ✅ **Handles ambiguous patterns** by prioritizing safety.  
+        ✅ **Scalable** — capable of handling multiple inputs and datasets.  
+        ✅ **High reliability** — model trained on real-world data patterns.  
+
+        ---
+
+        ## ⚠️ **4. Important Safety Notice:**  
+        - Even though the model is highly accurate, **do not rely solely on AI predictions** for mushroom consumption.  
+        - Always consult an expert or reference trusted sources before consuming any wild mushrooms.  
+        - Toxic mushrooms can have subtle variations — visual confirmation is not always sufficient.  
+        - When in doubt, **do not consume**!  
+
+        ---
         """
     )
     # Footer with social links
     st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists</div>', unsafe_allow_html=True)
-
-    # Footer - Technologies and Acknowledgments
-    # st.header("Technologies Behind This Project")
-    # st.write(
-    #     """
-    #     This project is powered by the following technologies:
-    #     - **Python**: The language used for the back-end logic.
-    #     - **Streamlit**: The framework for building the web interface.
-    #     - **Plotly**: For creating interactive visualizations.
-    #     - **Scikit-learn**: Used for machine learning model development.
-    #     - **Pandas**: For data manipulation and feature processing.
-
-    #     Special thanks to the **UCI Mushroom Dataset** for providing real-world data for training our models.
-    #     """
-    # )

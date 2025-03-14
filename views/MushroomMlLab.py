@@ -32,7 +32,7 @@ def app():
             unsafe_allow_html=True)
     set_bg_hack_url()
 
-    st.title("Mushroom Trio Classifier: Logistic Regression, Random Forest, and Support Vector Machines")
+    st.title("🍄The Mushroom ML Lab: LR,RF,SVM🌳")
     st.markdown("Are your mushrooms edible or poisonous? 🍄")
     st.sidebar.title("Mushroom Classifiers")
     st.sidebar.markdown("Upload a Mushroom Dataset and classify whether it's edible or poisonous!")
