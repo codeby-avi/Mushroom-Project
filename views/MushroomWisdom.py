@@ -6,60 +6,17 @@ def app():
     """About Mushroom Page."""
     st.title("🍄 About Mushroom Classification")
 
-    def get_img_as_base64(file):
-        with open(file, "rb") as f:
-            data = f.read()
-        return base64.b64encode(data).decode()
-
-    # Load background image
-    img = get_img_as_base64("images/mushroom2.jpg")
-
-    page_bg_img = f"""
-    <style>
-    [data-testid="stAppViewContainer"] > .main {{
-        background-image: url("data:image/jpeg;base64,{img}");
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: local;
-    }}
-
-    [data-testid="stSidebar"] > div:first-child {{
-        background-image: url("data:image/jpeg;base64,{img}");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-
-    [data-testid="stHeader"] {{
-        background: rgba(0, 0, 0, 0);
-    }}
-
-    [data-testid="stToolbar"] {{
-        right: 2rem;
-    }}
-
-    .stMarkdown {{
-        color: rgba(255, 255, 255, 0.7);  /* Transparent white text */
-        font-size: 16px;
-    }}
-    
-    .stHeader h1 {{
-        color: rgba(255, 255, 255, 0.9);  /* Slightly less transparent for header */
-    }}
-    </style>
-    """
-
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
     def set_bg_hack_url():
 
         st.markdown(
             f"""
             <style>
             .stApp {{
-                background: url("https://cdn.pixabay.com/photo/2020/06/19/22/33/wormhole-5319067_960_720.jpg");
-                background-size: cover
+                background: url("https://avi-chavan-96.sirv.com/Mushroom/disc-fungus-8298506_1280.jpg");
+                background-size: 100% 100%;
+                background-position: center;
+                min-height: 100vh; /* Minimum height to cover the full viewport */
+                height: auto; /* Adjust height based on content */
             }}
             </style>
             """,
@@ -287,4 +244,4 @@ def app():
 
     st.image(r"D:\Mushroom Project\images\mushroom1.jpg", caption="Exploring the Fascinating World of Mushrooms!")
     # Footer with social links
-    st.markdown('<div class="footer">Created with ❤️ by Team </div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists </div>', unsafe_allow_html=True)

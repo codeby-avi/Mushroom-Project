@@ -6,29 +6,43 @@ import plotly.express as px
 
 def app():
 
-    # Load images and set the background dynamically
-    def get_img_as_base64(file):
-        with open(file, "rb") as f:
-            data = f.read()
-        return base64.b64encode(data).decode()
+    # # Load images and set the background dynamically
+    # def get_img_as_base64(file):
+    #     with open(file, "rb") as f:
+    #         data = f.read()
+    #     return base64.b64encode(data).decode()
 
-    # Load background image for page
-    img = get_img_as_base64("images/mushroom7.jpg")
-    # bg_image = "https://cdn.pixabay.com/photo/2020/06/19/22/33/wormhole-5319067_960_720.jpg"
-    page_bg_img = f"""
+    # # Load background image for page
+    # img = get_img_as_base64("images/mushroom7.jpg")
+    # # bg_image = "https://cdn.pixabay.com/photo/2020/06/19/22/33/wormhole-5319067_960_720.jpg"
+    # page_bg_img = f"""
     
-    <style>
-    .stApp {{
-                background: url("data:image/jpeg;base64,{img}");
-                background-size: cover;
-                # background-repeat: no-repeat;
+    # <style>
+    # .stApp {{
+    #             background: url("data:image/jpeg;base64,{img}");
+    #             background-size: cover;
+    #             # background-repeat: no-repeat;
                 
+    #         }}
+
+    # </style>
+    # """
+    def set_bg_hack_url():
+
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background: url("https://avi-chavan-96.sirv.com/Mushroom/mushroom1.jpg");
+                background-size: 100% 100%;
+                background-position: center;
+                min-height: 100vh; /* Minimum height to cover the full viewport */
+                height: auto; /* Adjust height based on content */
             }}
-
-    </style>
-    """
-
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+            </style>
+            """,
+            unsafe_allow_html=True)
+    set_bg_hack_url()
 
     # Header Section
     st.title(" Mushroom Trio Classifier 🍄")
@@ -44,19 +58,6 @@ def app():
         """
     )
 
-    # # Quick Links and Buttons Section
-    # col1, col2 = st.columns(2)
-    # with col1:
-    #     if st.button("Go to About Page"):
-    #         st.session_state.page = "about"  # Navigate to the About page
-
-    # with col2:
-    #     if st.button("Start Classifying"):
-    #         from views.model1 import app
-    #         app()  # Navigate to the Classification model page
-
-    # Showcase Mushroom Data Visualizations
-    # For demonstration purposes, we will show some mock data visualizations
     data = {
         "Mushroom Type": ["Edible", "Poisonous", "Edible", "Poisonous", "Edible", "Poisonous", "Edible", "Poisonous"],
         "Frequency": [200, 150, 180, 210, 240, 190, 220, 160],
@@ -99,7 +100,7 @@ def app():
         """
     )
     # Footer with social links
-    st.markdown('<div class="footer">Created with ❤️Team</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists</div>', unsafe_allow_html=True)
 
     # Footer - Technologies and Acknowledgments
     # st.header("Technologies Behind This Project")

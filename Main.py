@@ -6,6 +6,25 @@ from streamlit_option_menu import option_menu
 import base64
 
 
+
+def set_bg_hack_url():
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background: url("https://avi-chavan-96.sirv.com/Mushroom/parasol-4549617_1280.jpg");
+            background-size: contain
+            background-position: center;
+            min-height: 100vh; /* Minimum height to cover the full viewport */
+            height: auto; /* Adjust height based on content */
+            
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True)
+
+set_bg_hack_url()
+
 # Initialize SQLite database
 def init_db():
     conn = sqlite3.connect("users.db")
@@ -71,7 +90,7 @@ def login():
             # Persist login state in query params
             st.query_params["authenticated"] = True
             st.query_params["username"] = username
-            st.success(f"Welcome back, {username}!")
+            st.success(f"👋 Welcome Back {username}!")
         else:
             st.error("Invalid username or password!")
 
@@ -154,13 +173,13 @@ try:
     if authenticated:
         app()
 except Exception:
-    st.sidebar.title("Mushroom Classifier 🍄")
-    page = st.sidebar.radio("🔐Authentication", ["🔒Login", "📝Sign Up"])
-    # login()
+    st.sidebar.title("🍄 Mushroom Classifier")
+    page = st.sidebar.radio("🔐 Authentication", ["🔒 Login", "📝 Sign Up"])
 
-    if page == "🔒Login":
+    if page == "🔒 Login":
         login()
-    elif page == "📝Sign Up":
+    elif page == "📝 Sign Up":
         signup()
+
 # authenticated = query_params.get("authenticated")
 

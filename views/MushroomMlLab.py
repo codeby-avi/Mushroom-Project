@@ -14,6 +14,24 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def app():
+    
+    def set_bg_hack_url():
+
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background: url("https://avi-chavan-96.sirv.com/Mushroom/fly-agaric-7515053_1280.jpg");
+                background-size: 100% 100%;
+                background-position: center;
+                min-height: 100vh; /* Minimum height to cover the full viewport */
+                height: auto; /* Adjust height based on content */
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True)
+    set_bg_hack_url()
+
     st.title("Mushroom Trio Classifier: Logistic Regression, Random Forest, and Support Vector Machines")
     st.markdown("Are your mushrooms edible or poisonous? 🍄")
     st.sidebar.title("Mushroom Classifiers")
@@ -103,23 +121,6 @@ def app():
 
     if uploaded_file is not None:
         data = pd.read_csv(uploaded_file)
-        
-        # Check if the dataset contains the 'type' column or something similar for classification
-        # if 'type' in data.columns:
-        #     target_column = 'type'
-        # elif 'class' in data.columns:
-        #     target_column = 'class'
-        # elif 'class=e' in data.columns:
-        #     target_column = 'class=e'
-        # elif 'p' in data.columns:
-        #     target_column = 'class=p'
-        # else:
-        #     # Automatically choose the last column as the target if neither 'type' nor 'class' is found
-        #     target_column = data.columns[-1]
-        #     st.warning(f"Using '{target_column}' as the target column since no 'type' or 'class' column was found.")
-
-
-        # Check if the dataset contains a target column for classification
         possible_targets = ['type', 'class', 'class=e', 'class=p']
         target_column = None
         for col in possible_targets:
@@ -131,7 +132,6 @@ def app():
             # Automatically choose the last column as the target if no expected column is found
             target_column = data.columns[-1]
             st.warning(f"Using '{target_column}' as the target column since no expected column was found.")
-
 
         
         df = preprocess_data(data)
@@ -146,13 +146,8 @@ def app():
         st.sidebar.subheader("Choose Classifier:")
         classifier = st.sidebar.selectbox(
             "Classifier",
-            ("Support Vector Machines (SVM)", "Logistic Regression", "Random Forest")
+            ("Logistic Regression", "Random Forest","Support Vector Machines (SVM)")
         )
-        # st.sidebar.subheader("Choose Classifier:")
-        # classifier = st.sidebar.selectbox(
-        #     "Classifier",
-        #     ("Support Vector Machines (SVM)", "Logistic Regression", "Random Forest", "Decision Tree", "K-Nearest Neighbors (KNN)", "Naive Bayes")
-        # )
         
         if classifier == 'Support Vector Machines (SVM)':
             st.sidebar.subheader("Model Hyperparameters")
@@ -340,11 +335,5 @@ def app():
                 
                 plot_metrics(metrics, model, x_test, y_test, class_names)
     # Footer with social links
-    st.markdown('<div class="footer">Created with ❤️Team</div>', unsafe_allow_html=True)
-
-
-
-# if __name__ == '__main__':
-#     main()
-
+    st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists</div>', unsafe_allow_html=True)
 
