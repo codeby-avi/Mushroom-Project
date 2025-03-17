@@ -192,31 +192,30 @@ def app():
     # Create team member profiles
     team_members = [
         {
-            "name": "Alice Smith",
+            "name": "Chavan Avinash",
             "role": "Project Lead and Data Scientist",
             "bio": "Alice specializes in data-driven solutions and model optimization. She ensures the project's success with her leadership and expertise in AI.",
             "image": "D:\Mushroom Project\images\mushroom2.jpg"
         },
         {
-            "name": "Bob Johnson",
+            "name": "Pratiksha Irole",
             "role": "Machine Learning Engineer",
             "bio": "Bob focuses on building robust and efficient machine learning models, ensuring high accuracy and reliability in predictions.",
             "image": "D:\Mushroom Project\images\mushroom2.jpg"
         },
         {
-            "name": "Carla Davis",
+            "name": "Sneha Shinde",
             "role": "Frontend Developer and UI Designer",
             "bio": "Carla designs user-friendly interfaces that make the app accessible to everyone. Her creativity brings the project to life.",
             "image": "D:\Mushroom Project\images\mushroom2.jpg"
         },
         {
-            "name": "David Lee",
+            "name": "Samarth Garde",
             "role": "Researcher and Mushroom Expert",
             "bio": "David brings extensive knowledge of mycology and ensures the accuracy of mushroom classifications through his research.",
             "image": "D:\Mushroom Project\images\mushroom2.jpg"
         }
     ]
-
 
     #display head members 
     cols = st.columns(len(head_members))

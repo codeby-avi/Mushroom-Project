@@ -7,26 +7,7 @@ import plotly.express as px
 def app():
 
     # # Load images and set the background dynamically
-    # def get_img_as_base64(file):
-    #     with open(file, "rb") as f:
-    #         data = f.read()
-    #     return base64.b64encode(data).decode()
-
-    # # Load background image for page
-    # img = get_img_as_base64("images/mushroom7.jpg")
-    # # bg_image = "https://cdn.pixabay.com/photo/2020/06/19/22/33/wormhole-5319067_960_720.jpg"
-    # page_bg_img = f"""
     
-    # <style>
-    # .stApp {{
-    #             background: url("data:image/jpeg;base64,{img}");
-    #             background-size: cover;
-    #             # background-repeat: no-repeat;
-                
-    #         }}
-
-    # </style>
-    # """
     def set_bg_hack_url():
 
         st.markdown(
