@@ -110,7 +110,7 @@ def signup():
             st.error("Username already exists!")
 
 # Main application
-def app():
+def Main_app():
     
     st.title(f"Welcome, {st.session_state.current_user}!")
     st.write("")
@@ -141,19 +141,19 @@ def app():
     # Load pages dynamically based on selection
     if selected == "Home":
             from views.Home import app
-            return app()
+            app()
     elif selected == "Edibility Checker":
             from views.EdibilityChecker import app
-            return app()
+            app()
     elif selected == "Mushroom ML Lab":
             from views.MushroomMlLab import app
-            return app()
+            app()
     elif selected == "Mushroom Wisdom":
             from views.MushroomWisdom import app
-            return app()
+            app()
     elif selected == "Gallery":
             from views.Gallery import app
-            return app()
+            app()
 
 
     if st.button("Logout"):
@@ -167,7 +167,7 @@ try:
     authenticated = st.query_params["authenticated"]
     st.session_state.current_user =st.query_params["username"]
     if authenticated:
-        app()
+        Main_app()
 except Exception:
     st.sidebar.title("🍄 Mushroom Classifier")
     page = st.sidebar.radio("🔐 Authentication", ["🔒 Login", "📝 Sign Up"])
