@@ -3,7 +3,13 @@ import base64
 
 
 def app():
-
+    st.markdown("""
+        <div class="text">
+        Welcome to the **Mushroom Encyclopedia**! This app is your ultimate guide to the fascinating world of mushrooms. 
+        Explore their biology, ecology, uses, and cultural significance. Whether you're a mycologist, a forager, or just curious, 
+        there's something here for everyone!
+        </div>
+    """, unsafe_allow_html=True)
     def set_bg_hack_url():
 
         st.markdown(
@@ -20,14 +26,6 @@ def app():
             """,
             unsafe_allow_html=True)
     set_bg_hack_url()
-
-    st.markdown("""
-        <div class="text">
-        Welcome to the **Mushroom Encyclopedia**! This app is your ultimate guide to the fascinating world of mushrooms. 
-        Explore their biology, ecology, uses, and cultural significance. Whether you're a mycologist, a forager, or just curious, 
-        there's something here for everyone!
-        </div>
-    """, unsafe_allow_html=True)
 
     # Section 1: Introduction to Mushrooms
     st.header("🍄 Introduction to Mushrooms")
