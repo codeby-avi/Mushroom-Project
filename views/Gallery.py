@@ -2,63 +2,7 @@ import streamlit as st
 import base64
 
 def app():
-    # Function to encode images in base64 for background styling
-    def get_img_as_base64(file):
-        with open(file, "rb") as f:
-            data = f.read()
-        return base64.b64encode(data).decode()
 
-    # Load background image
-    img = get_img_as_base64("D:\Mushroom Project\images\mushroom1.jpg")
-
-    # CSS for styling
-    page_bg_img = f"""
-    <style>
-    [data-testid="stAppViewContainer"] > .main {{
-        background-image: url("data:image/jpeg;base64,{img}");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: white;
-    }}
-
-    .stMarkdown h1, h2, h3 {{
-        color: #ffcc00;
-        font-family: 'Courier New', Courier, monospace;
-        text-shadow: 2px 2px 4px #000;
-    }}
-
-    .stMarkdown p {{
-        color: #ffffff;
-        font-family: Arial, sans-serif;
-        line-height: 1.8;
-        text-shadow: 1px 1px 2px #000;
-    }}
-
-    .stButton>button {{
-        background-color: #ffcc00;
-        color: black;
-        font-size: 16px;
-        font-weight: bold;
-        border: none;
-        border-radius: 10px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }}
-
-    .stButton>button:hover {{
-        background-color: #ff9900;
-    }}
-
-    footer {{
-        visibility: hidden;
-    }}
-    </style>
-    """
-
-    # Apply CSS styling
-    st.markdown(page_bg_img, unsafe_allow_html=True)
 
     # About Us Page Header
     st.title("🍄 About Us")
