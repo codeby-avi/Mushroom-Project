@@ -181,4 +181,3 @@ except Exception:
         signup()
 
 # authenticated = query_params.get("authenticated")
-
