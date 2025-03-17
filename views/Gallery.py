@@ -2,7 +2,7 @@ import streamlit as st
 import base64
 
 def app():
-        
+
     def set_bg_hack_url():
 
         st.markdown(
@@ -19,6 +19,7 @@ def app():
             """,
             unsafe_allow_html=True)
     set_bg_hack_url()
+
 
     # About Us Page Header
     st.title("🍄 About Us")
@@ -255,8 +256,4 @@ def app():
 
     # Footer with social links
     st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists</div>', unsafe_allow_html=True)
-
-
-# if __name__ == "__main__":
-#     app()
 
