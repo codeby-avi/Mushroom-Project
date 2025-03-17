@@ -6,7 +6,6 @@ from streamlit_option_menu import option_menu
 import base64
 
 
-
 def set_bg_hack_url():
     st.markdown(
         f"""
@@ -142,21 +141,19 @@ def app():
     # Load pages dynamically based on selection
     if selected == "Home":
             from views.Home import app
-            app()
+            return app()
     elif selected == "Edibility Checker":
             from views.EdibilityChecker import app
-            app()
+            return app()
     elif selected == "Mushroom ML Lab":
             from views.MushroomMlLab import app
-            app()
+            return app()
     elif selected == "Mushroom Wisdom":
-    
             from views.MushroomWisdom import app
-            app()
-
+            return app()
     elif selected == "Gallery":
             from views.Gallery import app
-            app()
+            return app()
 
 
     if st.button("Logout"):
@@ -174,10 +171,8 @@ try:
 except Exception:
     st.sidebar.title("🍄 Mushroom Classifier")
     page = st.sidebar.radio("🔐 Authentication", ["🔒 Login", "📝 Sign Up"])
-
     if page == "🔒 Login":
         login()
     elif page == "📝 Sign Up":
         signup()
 
-# authenticated = query_params.get("authenticated")
