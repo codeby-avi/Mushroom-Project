@@ -2,6 +2,8 @@ import streamlit as st
 import base64
 
 def app():
+
+    
     # About Us Page Header
     st.title("🍄 About Us")
     st.write(
@@ -10,7 +12,7 @@ def app():
         Whether you're a nature enthusiast, a forager, or a data scientist, this project is designed with you in mind.
         """
     )
-    
+
     def set_bg_hack_url():
 
         st.markdown(

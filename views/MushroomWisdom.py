@@ -3,6 +3,8 @@ import base64
 
 
 def app():
+
+    
     st.markdown("""
         <div class="text">
         Welcome to the **Mushroom Encyclopedia**! This app is your ultimate guide to the fascinating world of mushrooms. 
