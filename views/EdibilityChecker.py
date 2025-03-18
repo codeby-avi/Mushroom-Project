@@ -175,7 +175,3 @@ def app():
 
     # Footer
     st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists</div>', unsafe_allow_html=True)
-
-# Run the app
-# if __name__ == "__main__":
-#     app()
