@@ -224,31 +224,64 @@ def app():
         }
     ]
 
-    #display head members 
-    cols = st.columns(len(head_members))
-    for col, member in zip(cols, head_members):
-        with col:
-            st.image(member["image"], use_container_width=True, caption=member["name"])
-            st.subheader(member["name"])
-            st.write(f"**{member['role']}**")
-            st.write(member["bio"])
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
+import streamlit as st
 
-    # Display team members in columns
-    cols = st.columns(len(team_members))
-    for col, member in zip(cols, team_members):
-        with col:
-            st.image(member["image"], use_container_width=True, caption=member["name"])
-            st.subheader(member["name"])
-            st.write(f"**{member['role']}**")
-            st.write(member["bio"])
+# Ensure the number of columns is responsive
+num_head_cols = min(len(head_members), 3)  # Limit to 3 columns for better responsiveness
+num_team_cols = min(len(team_members), 3)
 
-    
+# Display head members
+st.markdown("## 🌟 Meet the Head Members")
+cols = st.columns(num_head_cols)
+for col, member in zip(cols, head_members):
+    with col:
+        st.markdown(
+            f"""
+            <div style="
+                text-align: center;
+                padding: 10px;
+                border-radius: 12px;
+                background-color: #f9f9f9;
+                box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+                transition: transform 0.2s ease;
+                cursor: pointer;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1.0)'">
+                <img src="{member['image']}" style="width:100%; border-radius: 10px; margin-bottom: 10px;" />
+                <h3 style="margin: 5px 0;">{member['name']}</h3>
+                <p style="font-size: 16px; font-weight: bold; color: #4CAF50;">{member['role']}</p>
+                <p style="font-size: 14px; color: #666;">{member['bio']}</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+st.write("")  # Add space between sections
+
+# Display team members
+st.markdown("## 🚀 Meet the Team")
+cols = st.columns(num_team_cols)
+for col, member in zip(cols, team_members):
+    with col:
+        st.markdown(
+            f"""
+            <div style="
+                text-align: center;
+                padding: 10px;
+                border-radius: 12px;
+                background-color: #f9f9f9;
+                box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+                transition: transform 0.2s ease;
+                cursor: pointer;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1.0)'">
+                <img src="{member['image']}" style="width:100%; border-radius: 10px; margin-bottom: 10px;" />
+                <h3 style="margin: 5px 0;">{member['name']}</h3>
+                <p style="font-size: 16px; font-weight: bold; color: #4CAF50;">{member['role']}</p>
+                <p style="font-size: 14px; color: #666;">{member['bio']}</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
 
     # Contact Section
     st.header("📬 Get in Touch")
