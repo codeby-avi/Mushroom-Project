@@ -163,12 +163,17 @@ def Main_app():
         st.experimental_rerun()
 
 # ----------------------------- Main Logic -----------------------------
-if st.session_state.authenticated:
-    Main_app()
-else:
-    st.sidebar.title("🍄 Mushroom Classifier")
-    page = st.sidebar.radio("🔐 Authentication", ["🔒 Login", "📝 Sign Up"])
-    if page == "🔒 Login":
-        login()
-    elif page == "📝 Sign Up":
-        signup()
+    authenticated = st.query_params.get("authenticated", False)
+    username = st.query_params.get("username", None)
+    
+    if authenticated and username:
+        st.session_state.authenticated = True
+        st.session_state.current_user = username
+        Main_app()
+    else:
+        st.sidebar.title("🍄 Mushroom Classifier")
+        page = st.sidebar.radio("🔐 Authentication", ["🔒 Login", "📝 Sign Up"])
+        if page == "🔒 Login":
+            login()
+        elif page == "📝 Sign Up":
+            signup()
