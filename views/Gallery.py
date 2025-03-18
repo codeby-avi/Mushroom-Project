@@ -219,7 +219,8 @@ def app():
             "name": "Samarth Garde",
             "role": "Researcher and Mushroom Expert",
             "bio": "David brings extensive knowledge of mycology and ensures the accuracy of mushroom classifications through his research.",
-            "image": "D:\Mushroom Project\images\mushroom2.jpg"
+            "image":"https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
+            
         }
     ]
 
