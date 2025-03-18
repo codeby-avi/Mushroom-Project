@@ -6,7 +6,6 @@ from streamlit_option_menu import option_menu
 import base64
 
 
-
 def set_bg_hack_url():
     st.markdown(
         f"""
