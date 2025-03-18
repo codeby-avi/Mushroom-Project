@@ -113,7 +113,7 @@ def signup():
             st.warning("⚠️ Please fill out all fields!")
 
 # ----------------------------- Main Application -----------------------------
-def Main_app():
+def app():
     st.title(f"👋 Welcome, {st.session_state.current_user}!")
     st.write("---")
 
@@ -170,7 +170,7 @@ try:
     if authenticated and username:
         st.session_state.authenticated = True
         st.session_state.current_user = username
-        Main_app()
+        app()
     else:
         raise ValueError("Invalid state")
 except Exception:
