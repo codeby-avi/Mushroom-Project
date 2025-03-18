@@ -181,23 +181,6 @@ def app():
         """
     )
 
-    if not st.session_state.authenticated:
-        st.markdown("## 🔒 Login")
-        with st.form("Login Form", clear_on_submit=True):
-            username = st.text_input("Username", placeholder="Enter your username")
-            password = st.text_input("Password", type="password", placeholder="Enter your password")
-            submit = st.form_submit_button("Login")
-
-            if submit:
-                from app import authenticate_user
-                if authenticate_user(username, password):
-                    st.session_state.authenticated = True
-                    st.session_state.current_user = username
-                    st.success(f"✅ Welcome back, **{username}**!")
-                    st.experimental_rerun()
-                else:
-                    st.error("❌ Invalid username or password!")
-
     head_members = [
         {
             "name": "Alice Smith",
