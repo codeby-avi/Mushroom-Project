@@ -163,9 +163,6 @@ def Main_app():
         st.experimental_rerun()
 
 # ----------------------------- Main Logic -----------------------------
-    authenticated = st.query_params.get("authenticated", False)
-    username = st.query_params.get("username", None)
-    
     if authenticated and username:
         st.session_state.authenticated = True
         st.session_state.current_user = username
