@@ -4,6 +4,13 @@ import base64
 
 def app():
 
+    st.markdown("""
+        <div class="text">
+        Welcome to the **Mushroom Encyclopedia**! This app is your ultimate guide to the fascinating world of mushrooms. 
+        Explore their biology, ecology, uses, and cultural significance. Whether you're a mycologist, a forager, or just curious, 
+        there's something here for everyone!
+        </div>
+    """, unsafe_allow_html=True)
     def set_bg_hack_url():
 
         st.markdown(
@@ -20,14 +27,6 @@ def app():
             """,
             unsafe_allow_html=True)
     set_bg_hack_url()
-
-    st.markdown("""
-        <div class="text">
-        Welcome to the **Mushroom Encyclopedia**! This app is your ultimate guide to the fascinating world of mushrooms. 
-        Explore their biology, ecology, uses, and cultural significance. Whether you're a mycologist, a forager, or just curious, 
-        there's something here for everyone!
-        </div>
-    """, unsafe_allow_html=True)
 
     # Section 1: Introduction to Mushrooms
     st.header("🍄 Introduction to Mushrooms")
@@ -397,7 +396,5 @@ def app():
         This tool should be used as an educational aid and a first step in mushroom identification. Don't rely solely on the results from the model—cross-check with trusted resources.
         """
     )
-    
-    st.image(r"D:\Mushroom Project\images\mushroom1.jpg", caption="Exploring the Fascinating World of Mushrooms!")
     # Footer with social links
     st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists </div>', unsafe_allow_html=True)
