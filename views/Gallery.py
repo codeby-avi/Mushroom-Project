@@ -148,14 +148,14 @@ def app():
     st.markdown('<div class="header">🌟 Meet the Team</div>', unsafe_allow_html=True)
 
     head_members = [
-        {"name": "Alice Smith", "role": "Project Lead", "bio": "Expert in AI and data science.", "image": "D:/Mushroom Project/images/mushroom2.jpg"},
-        {"name": "Bob Johnson", "role": "ML Engineer", "bio": "Focused on building robust models.", "image": "D:/Mushroom Project/images/mushroom2.jpg"}
+        {"name": "Alice Smith", "role": "Project Lead", "bio": "Expert in AI and data science.", "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"},
+        {"name": "Bob Johnson", "role": "ML Engineer", "bio": "Focused on building robust models.", "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"}
     ]
 
     team_members = [
-        {"name": "Chavan Avinash", "role": "Project Lead", "bio": "Expert in AI and data science.", "image": "D:/Mushroom Project/images/mushroom2.jpg"},
-        {"name": "Pratiksha Irole", "role": "ML Engineer", "bio": "Focused on building robust models.", "image": "D:/Mushroom Project/images/mushroom2.jpg"},
-        {"name": "Sneha Shinde", "role": "Frontend Developer", "bio": "Designed the user interface.", "image": "D:/Mushroom Project/images/mushroom2.jpg"},
+        {"name": "Chavan Avinash", "role": "Project Lead", "bio": "Expert in AI and data science.", "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"},
+        {"name": "Pratiksha Irole", "role": "ML Engineer", "bio": "Focused on building robust models.", "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"},
+        {"name": "Sneha Shinde", "role": "Frontend Developer", "bio": "Designed the user interface.", "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"},
         {"name": "Samarth Garde", "role": "Researcher", "bio": "Provided mycology expertise.", "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"}
     ]
 
