@@ -1,15 +1,9 @@
 import streamlit as st
 import base64
 
+# Gallery Page
 def app():
-    st.title("🍄 About Us")
-    st.write(
-        """
-        Welcome to the **Mushroom Classification Project**! Our goal is to make mushroom identification safer, smarter, and accessible to everyone. 
-        Whether you're a nature enthusiast, a forager, or a data scientist, this project is designed with you in mind.
-        """
-    )
-    # About Us Page Header
+    # Set Background Image
     def set_bg_hack_url():
 
         st.markdown(
@@ -25,10 +19,12 @@ def app():
             </style>
             """,
             unsafe_allow_html=True)
+        
+    # Call background image function   
     set_bg_hack_url()
 
-    # About Us Page Header
-    st.title("🍄 About Us")
+    # Gallery Page Header
+    st.title("🍄 Gallery")
     st.write(
         """
         Welcome to the **Mushroom Classification Project**! Our goal is to make mushroom identification safer, smarter, and accessible to everyone. 
@@ -48,6 +44,7 @@ def app():
             - To educate users about the fascinating world of mushrooms and ensure safety in foraging practices.
             """
         )
+
     # Project Overview Section
     st.header("🚀 Project Overview")
     st.write(
@@ -259,6 +256,5 @@ def app():
         - **LinkedIn**: [Our Profile](https://linkedin.com/)
         """
     )
-
-    # Footer with social links
+    
     st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists</div>', unsafe_allow_html=True)

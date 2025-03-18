@@ -13,8 +13,9 @@ from sklearn.metrics import confusion_matrix, roc_curve, auc, precision_recall_c
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Main function
 def app():
-    
+    # Load Background Image Dynamically
     def set_bg_hack_url():
 
         st.markdown(
@@ -32,11 +33,13 @@ def app():
             unsafe_allow_html=True)
     set_bg_hack_url()
 
+    # Header Section
     st.title("🍄The Mushroom ML Lab: LR,RF,SVM🌳")
     st.markdown("Are your mushrooms edible or poisonous? 🍄")
-    st.sidebar.title("Mushroom Classifiers")
+    st.sidebar.title("🍄Mushroom Classifiers")
     st.sidebar.markdown("Upload a Mushroom Dataset and classify whether it's edible or poisonous!")
 
+    # Data Preprocessing
     @st.cache_data(persist=True)
     def preprocess_data(data):
         label = LabelEncoder()
@@ -44,13 +47,15 @@ def app():
             data[col] = label.fit_transform(data[col])
         return data
 
+    # Data Splitting
     @st.cache_data(persist=True)
     def split(df, target_column):
         y = df[target_column]
         x = df.drop(columns=[target_column])
         x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=0)
         return x_train, x_test, y_train, y_test
-
+    
+    # Plotting Metrics
     def plot_metrics(metrics_list, model, x_test, y_test, class_names):
         # Confusion Matrix
         if 'Confusion Matrix' in metrics_list:
@@ -133,7 +138,7 @@ def app():
             target_column = data.columns[-1]
             st.warning(f"Using '{target_column}' as the target column since no expected column was found.")
 
-        
+        # Preprocess and split the data
         df = preprocess_data(data)
         x_train, x_test, y_train, y_test = split(df, target_column)
         class_names = ['edible', 'poisonous']
@@ -143,12 +148,14 @@ def app():
             st.subheader("Mushroom Dataset (Processed for Classification)")
             st.write(data)
 
+        # Classifier buttons
         st.sidebar.subheader("Choose Classifier:")
         classifier = st.sidebar.selectbox(
             "Classifier",
             ("Logistic Regression", "Random Forest","Support Vector Machines (SVM)")
         )
         
+        # Classifier selection
         if classifier == 'Support Vector Machines (SVM)':
             st.sidebar.subheader("Model Hyperparameters")
             C = st.sidebar.number_input("C (Regularization Parameter)", 0.1, 10.0, step=0.1, key='C')
@@ -156,6 +163,7 @@ def app():
             gamma = st.sidebar.radio("Gamma (Kernel Coefficient)", ("scale", "auto"), key='gamma')
             metrics = st.sidebar.multiselect("What metrics to plot?", ('Confusion Matrix', 'ROC Curve', 'Precision-Recall Curve', 'Recall vs Threshold', 'F1-Score vs Threshold'))
 
+            # Classification button
             if st.sidebar.button("Classify", key='classify'):
                 st.subheader("Support Vector Machine (SVM) Results")
                 model = SVC(C=C, kernel=kernel, gamma=gamma, probability=True)
@@ -188,7 +196,7 @@ def app():
                 plot_metrics(metrics, model, x_test, y_test, class_names)
 
             
-
+        # Logistic Regression
         if classifier == 'Logistic Regression':
             st.sidebar.subheader("Model Hyperparameters")
             C = st.sidebar.number_input("C (Regularization parameter)", 0.01, 10.0, step=0.01, key='C_LR')
@@ -226,6 +234,7 @@ def app():
                 # Plot metrics
                 plot_metrics(metrics, model, x_test, y_test, class_names)
 
+        # Random Forest
         if classifier == 'Random Forest':
             st.sidebar.subheader("Model Hyperparameters")
             n_estimators = st.sidebar.number_input("Number of trees in the forest", 100, 5000, step=10, key='n_estimators')
@@ -264,6 +273,7 @@ def app():
                 # Plot metrics
                 plot_metrics(metrics, model, x_test, y_test, class_names)
 
+        # Decision Tree
         if classifier == 'Decision Tree':
             st.sidebar.subheader("Model Hyperparameters")
             max_depth = st.sidebar.number_input("Maximum depth of the tree", 1, 20, step=1, key='max_depth_dt')
@@ -288,6 +298,7 @@ def app():
                 
                 plot_metrics(metrics, model, x_test, y_test, class_names)
 
+        # K-Nearest Neighbors (KNN)
         if classifier == 'K-Nearest Neighbors (KNN)':
             st.sidebar.subheader("Model Hyperparameters")
             n_neighbors = st.sidebar.number_input("Number of neighbors", 1, 20, step=1, key='n_neighbors')
@@ -312,6 +323,7 @@ def app():
                 
                 plot_metrics(metrics, model, x_test, y_test, class_names)
 
+        # Naive Bayes
         if classifier == 'Naive Bayes':
             st.sidebar.subheader("Model Hyperparameters")
             metrics = st.sidebar.multiselect("What metrics to plot?", ('Confusion Matrix', 'ROC Curve', 'Precision-Recall Curve', 'Recall vs Threshold', 'F1-Score vs Threshold'))
@@ -334,6 +346,7 @@ def app():
                 st.write(f"Number of poisonous mushrooms: {poisonous_count}")
                 
                 plot_metrics(metrics, model, x_test, y_test, class_names)
+
     # Footer with social links
     st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists</div>', unsafe_allow_html=True)
 

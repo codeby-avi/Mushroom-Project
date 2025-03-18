@@ -5,8 +5,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import joblib
 
+# Function to classify the mushroom based on its features using ML algorithm
 def classification():
-    
+    #all model pickle files are stored in models folder
     model = joblib.load("models/logistic_regression_model.pkl")  # Update path if necessary
     
     # Full name dictionaries for feature mapping (as provided earlier)
@@ -57,42 +58,7 @@ def classification():
         df = df.drop(columns=cap_columns + gill_columns + stalk_columns)
         return df
 
-st.markdown(
-    """
-    <style>
-        .main {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-        }
-        .stButton>button {
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-        .stButton>button:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
-        }
-        .footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #888;
-            text-align: center;
-        }
-        h1, h2 {
-            color: #4CAF50;
-            text-align: center;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
+#Function to classify the mushroom
 def classify_mushroom(odor, bruises, gill_color, cap_shape, cap_surface, cap_color):
     match (odor, bruises, gill_color, cap_shape, cap_surface, cap_color):
         case ("f" | "y" | "c" | "m" | "p" | "s", _, _, _, _, _):
@@ -110,9 +76,11 @@ def classify_mushroom(odor, bruises, gill_color, cap_shape, cap_surface, cap_col
         case _:
             return "Poisonous"
 
-# Streamlit app
+# Streamlit app to run all code of the Edibility Checker
+
 def app():
 
+    # Load images and set the background dynamically
     def set_bg_hack_url():
         st.markdown(
             f"""
@@ -131,7 +99,7 @@ def app():
 
     set_bg_hack_url()
 
-
+    # Header Section
     st.title("🍄 Edibility Checker")
     st.subheader("👀 Not sure if it’s edible? Check with the Edibility Checker!")
 

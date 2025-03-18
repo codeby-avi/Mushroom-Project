@@ -5,9 +5,7 @@ import plotly.express as px
 
 
 def app():
-
-    # # Load images and set the background dynamically
-    
+# Load Background Image Dynamically
     def set_bg_hack_url():
 
         st.markdown(
@@ -23,9 +21,9 @@ def app():
             </style>
             """,
             unsafe_allow_html=True)
+        
     set_bg_hack_url()
-
-    # Header Section
+# Header Section OF Home Page 
     st.title(" Mushroom Trio Classifier 🍄")
     st.write(
         """
@@ -45,11 +43,11 @@ def app():
     }
     df = pd.DataFrame(data)
 
-    # Create a bar chart
+# Create a bar chart 
     fig = px.bar(df, x="Mushroom Type", y="Frequency", title="Mushroom Type Distribution", color="Mushroom Type")
     st.plotly_chart(fig, use_container_width=True)
 
-    # Mushroom Classification Overview
+# Mushroom Classification Overview
     st.header("🌟 How It Works")
     st.write(
         """
@@ -106,5 +104,6 @@ def app():
         ---
         """
     )
-    # Footer with social links
+
+# Footer with social links
     st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists</div>', unsafe_allow_html=True)

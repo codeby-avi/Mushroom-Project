@@ -1,9 +1,11 @@
 import streamlit as st
 import base64
 
-
+# Main function to display the mushroom wisdom app
 def app():
 
+    #Title and introduction
+    st.title("🍄Mushrooms Wisdom")
     st.markdown("""
         <div class="text">
         Welcome to the **Mushroom Encyclopedia**! This app is your ultimate guide to the fascinating world of mushrooms. 
@@ -11,8 +13,9 @@ def app():
         there's something here for everyone!
         </div>
     """, unsafe_allow_html=True)
+    
+    # Load image dynamically
     def set_bg_hack_url():
-
         st.markdown(
             f"""
             <style>
@@ -26,6 +29,8 @@ def app():
             </style>
             """,
             unsafe_allow_html=True)
+        
+    # Call the function to set the background image
     set_bg_hack_url()
 
     # Section 1: Introduction to Mushrooms
@@ -38,7 +43,6 @@ def app():
     st.write("""
     Mushrooms play vital roles in ecosystems as **decomposers**, **symbionts**, and **pathogens**. They are also valued for their **culinary**, **medicinal**, and **cultural significance**.
     """)
-
 
     # Section 2: Biology of Mushrooms
     st.header("Biological Classification")
@@ -111,7 +115,6 @@ def app():
         - Spore color is a key identification feature (e.g., white, black, brown).
         """)
 
-
 # Section 4: Types of Mushrooms
     st.header("Types of Mushrooms")
     with st.expander("1. Edible Mushrooms 🍲"):
@@ -145,6 +148,7 @@ def app():
         st.markdown("""
         - **Psilocybin Mushrooms** (*Psilocybe spp.*): Contain psilocybin, used in research for treating depression, PTSD, and anxiety.  
         """)
+
 # Section 5: Nutritional and Health Benefits
     st.header("Nutritional and Health Benefits💪")
     st.markdown("""
@@ -173,6 +177,7 @@ def app():
       - Break down pollutants like oil spills and plastics.  
       - Absorb heavy metals from contaminated soil.
     """)
+
  #Section 7:Reproduction & Spore Dispersal
     st.header("🌱 Reproduction & Spore Dispersal")
     st.write("""
@@ -357,6 +362,7 @@ def app():
     - **Hallucinogenic History**: Used in ancient spiritual rituals by cultures like the Aztecs.  
     - **Natural Antibiotics**: Penicillin, the first antibiotic, was derived from fungi.  
     """)
+
 # Section 18: Warnings for Mushroom Foragers
     st.header("⚠️ Warnings for Mushroom Foragers")
     st.markdown("""
@@ -364,6 +370,7 @@ def app():
     - **Cooking Requirement**: Some edible mushrooms are toxic when raw, such as morels.  
     - **Seasonality**: Mushrooms grow during specific times, often in symbiosis with particular trees.  
     """)
+
 # Section 19: Why Mushroom Classification is Important
     st.header("🌟 Why Mushroom Classification is Important")
     st.write(
@@ -385,6 +392,7 @@ def app():
         🚀 With growing interest in mushroom-based nutrition and medicine, this project contributes to both **scientific research** and **public safety**.  
         """
     )
+
 # Section 20: Safety Precautions & Warnings
     st.header("Safety Precautions & Warnings")
     st.write(
@@ -398,3 +406,4 @@ def app():
     )
     # Footer with social links
     st.markdown('<div class="footer">Created with ❤️ by Strategic Synergists </div>', unsafe_allow_html=True)
+

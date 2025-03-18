@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from streamlit_option_menu import option_menu
 
 
-# ----------------------------- Background Styling -----------------------------
+# Background Styling 
 def set_bg_hack_url():
     st.markdown(
         """
@@ -25,14 +25,24 @@ def set_bg_hack_url():
             .stButton > button:hover {
                 background-color: #45a049;
             }
-        </style>
+            .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+            }
+            h1, h2 {
+                color: #4CAF50;
+                text-align: center;
+            }
+            </style>
         """,
         unsafe_allow_html=True
     )
 
 set_bg_hack_url()
 
-# ----------------------------- Database Initialization -----------------------------
+# Database Initialization 
 def init_db():
     with sqlite3.connect("users.db") as conn:
         cursor = conn.cursor()
@@ -45,7 +55,7 @@ def init_db():
         """)
         conn.commit()
 
-# ----------------------------- User Authentication -----------------------------
+# User Authentication 
 def add_user(username, password):
     hashed_password = generate_password_hash(password, method="pbkdf2:sha256")
     try:
@@ -68,20 +78,20 @@ def authenticate_user(username, password):
 
 init_db()
 
-# ----------------------------- Session State Initialization -----------------------------
+# Session State Initialization 
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 if "current_user" not in st.session_state:
     st.session_state.current_user = None
 
-# ----------------------------- Login Function -----------------------------
+# Login Function 
 def login():
     st.markdown("## 🔒 Login", unsafe_allow_html=True)
     with st.form("Login Form", clear_on_submit=True):
         username = st.text_input("Username", placeholder="Enter your username")
         password = st.text_input("Password", type="password", placeholder="Enter your password")
         submit = st.form_submit_button("Login")
-
+    
     if submit:
         if username and password:
             if authenticate_user(username, password):
@@ -95,7 +105,7 @@ def login():
         else:
             st.warning("⚠️ Please fill out both fields!")
 
-# ----------------------------- Signup Function -----------------------------
+# Signup Function 
 def signup():
     st.markdown("## 📝 Sign Up", unsafe_allow_html=True)
     with st.form("Signup Form", clear_on_submit=True):
@@ -112,10 +122,8 @@ def signup():
         else:
             st.warning("⚠️ Please fill out all fields!")
 
-# ----------------------------- Main Application -----------------------------
+# Main Application 
 def app():
-    st.title(f"👋 Welcome, {st.session_state.current_user}!")
-    st.write("---")
 
     # Sidebar navigation
     with st.sidebar:
@@ -140,6 +148,8 @@ def app():
 
     # Load pages dynamically
     if selected == "Home":
+        st.title(f"👋 Welcome, {st.session_state.current_user}!")
+        # st.write("---")
         from views.Home import app
         app()
     elif selected == "Edibility Checker":
@@ -162,7 +172,7 @@ def app():
         st.query_params.clear()
         st.experimental_rerun()
 
-# ----------------------------- Main Logic -----------------------------
+# Main Logic 
 try:
     authenticated = st.query_params.get("authenticated", False)
     username = st.query_params.get("username", None)
@@ -180,4 +190,3 @@ except Exception:
         login()
     elif page == "📝 Sign Up":
         signup()
-
