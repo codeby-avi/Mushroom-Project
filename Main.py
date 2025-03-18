@@ -14,7 +14,7 @@ def set_bg_hack_url():
                 background-size: cover;
                 background-position: center;
                 min-height: 100vh;
-
+            }
             .stButton > button {
                 background-color: #4CAF50;
                 color: white;
@@ -90,6 +90,7 @@ def login():
                 st.query_params["authenticated"] = True
                 st.query_params["username"] = username
                 st.success(f"✅ Welcome back, **{username}**!")
+                st.experimental_rerun()
             else:
                 st.error("❌ Invalid username or password!")
         else:
@@ -152,8 +153,11 @@ def Main_app():
         from views.MushroomWisdom import app
         app()
     elif selected == "Gallery":
-        from views.Gallery import app
-        app()
+        if not st.session_state.authenticated:
+            st.warning("⚠️ Please log in to access this page.")
+        else:
+            from views.Gallery import app
+            app()
 
     # Logout Button
     if st.sidebar.button("🚪 Logout"):
