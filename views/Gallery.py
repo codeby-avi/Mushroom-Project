@@ -178,63 +178,67 @@ def app():
         """
     )
 
-    head_members = [
-        {
-            "name": "Alice Smith",
-            "role": "Project Lead and Data Scientist",
-            "bio": "Alice specializes in data-driven solutions and model optimization. She ensures the project's success with her leadership and expertise in AI.",
-            "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
-        },
-        {
-            "name": "Bob Johnson",
-            "role": "Machine Learning Engineer",
-            "bio": "Bob focuses on building robust and efficient machine learning models, ensuring high accuracy and reliability in predictions.",
-            "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
-        }
-    ]
+    # head_members = [
+    #     {
+    #         "name": "Alice Smith",
+    #         "role": "Project Lead and Data Scientist",
+    #         "bio": "Alice specializes in data-driven solutions and model optimization. She ensures the project's success with her leadership and expertise in AI.",
+    #         "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
+    #     },
+    #     {
+    #         "name": "Bob Johnson",
+    #         "role": "Machine Learning Engineer",
+    #         "bio": "Bob focuses on building robust and efficient machine learning models, ensuring high accuracy and reliability in predictions.",
+    #         "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
+    #     }
+    # ]
+
     # Create team member profiles
     team_members = [
         {
             "name": "Chavan Avinash",
-            "role": "Project Lead and Data Scientist",
-            "bio": "Alice specializes in data-driven solutions and model optimization. She ensures the project's success with her leadership and expertise in AI.",
-            "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
+            "role": "Project Lead 🧭 The Visionary Navigator",
+            "bio": "Othe overall project 🗂️—scheduling meetings 📅, setting deadlines ⏳, and tracking progress 📈. He ensures smooth team communication 🤝, connects with stakeholders 💬, and handles documentation 📝 like project reports 📑 and paper publication 📄.",
+            "image": "https://avi-chavan-96.sirv.com/Projects/mushroom-github/avinash.jpg"
         },
+
         {
             "name": "Pratiksha Irole",
-            "role": "Machine Learning Engineer",
-            "bio": "Bob focuses on building robust and efficient machine learning models, ensuring high accuracy and reliability in predictions.",
-            "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
+            "role": "🧹 The Data Wrangler",
+            "bio": "Prepared the mushroom dataset 🍄, handled missing values ❌, encoded categorical data 🔢, and normalized features 📊. Her work ensures the data is clean and ready for accurate model training ⚙️.",
+            "image": "https://avi-chavan-96.sirv.com/Projects/mushroom-github/pratiksha.jpg"
         },
+
         {
             "name": "Sneha Shinde",
-            "role": "Frontend Developer and UI Designer",
-            "bio": "Carla designs user-friendly interfaces that make the app accessible to everyone. Her creativity brings the project to life.",
-            "image": "https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
+            "role": "🧠 The Algorithm Architect",
+            "bio": "Handles the machine learning part of the project 🤖. She selects and implements algorithms like SVM and Logistic Regression 🧮, trains the models 🧑‍🏫, tunes hyperparameters ⚙️, and ensures high accuracy ✅ and performance 📈.",
+            "image": "https://avi-chavan-96.sirv.com/Projects/mushroom-github/sneha.jpg"
         },
+
         {
             "name": "Samarth Garde",
-            "role": "Researcher and Mushroom Expert",
-            "bio": "David brings extensive knowledge of mycology and ensures the accuracy of mushroom classifications through his research.",
-            "image":"https://avi-chavan-96.sirv.com/Mushroom/mushroom-7570693_1280.jpg"
+            "role": "📊 The Model Evaluator",
+            "bio": "Evaluates model performance using metrics like accuracy, precision, recall, F1-score, and confusion matrix 📉✅. He also performs cross-validation 🔁 to ensure the models are robust and reliable 💪.",
+            "image":"https://avi-chavan-96.sirv.com/Projects/mushroom-github/samarth.jpg"
             
         }
     ]
 
-    #display head members 
-    cols = st.columns(len(head_members))
-    for col, member in zip(cols, head_members):
-        with col:
-            st.image(member["image"], use_container_width=True, caption=member["name"])
-            st.subheader(member["name"])
-            st.write(f"**{member['role']}**")
-            st.write(member["bio"])
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
+    # #display head members 
+    # cols = st.columns(len(head_members))
+    # for col, member in zip(cols, head_members):
+    #     with col:
+    #         st.image(member["image"], use_container_width=True, caption=member["name"])
+    #         st.subheader(member["name"])
+    #         st.write(f"**{member['role']}**")
+    #         st.write(member["bio"])
+    #         st.write("")
+    #         st.write("")
+    #         st.write("")
+    #         st.write("")
+    #         st.write("")
+    #         st.write("")
 
     # Display team members in columns
     cols = st.columns(len(team_members))
@@ -251,8 +255,8 @@ def app():
         """
         Connect with us:
         
-        - **GitHub Repository**: [Visit Here](https://github.com/)
-        - **Email**: developerhub@example.com
+        - **GitHub Repository**: [Visit Here](https://github.com/codeby-avi/Mushroom-Project/tree/PROD-MUSHROOM)
+        - **Email**: codebyavi@gmail.com
         - **LinkedIn**: [Our Profile](https://linkedin.com/)
         """
     )

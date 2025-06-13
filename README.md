@@ -66,31 +66,31 @@ Mushroom-Project/
 
 Here is snapshot of each pages.
 - **Login**: 
-![Login ](https://avi-chavan-96.sirv.com/mushroom-github/login.png)
+![Login ](https://avi-chavan-96.sirv.com/Projects/mushroom-github/login.png)
 
 - **Sing Up**: 
-![Sign Up ](https://avi-chavan-96.sirv.com/mushroom-github/singup.png)
+![Sign Up ](https://avi-chavan-96.sirv.com/Projects/mushroom-github/singup.png)
 
 - **Home**: 
-![Home ](https://avi-chavan-96.sirv.com/mushroom-github/home.png)
+![Home ](https://avi-chavan-96.sirv.com/Projects/mushroom-github/home.png)
 
 - **Edibility Checker**: 
-![Edibility Checker ](https://avi-chavan-96.sirv.com/mushroom-github/ed.png)
+![Edibility Checker ](https://avi-chavan-96.sirv.com/Projects/mushroom-github/ed.png)
 
 - **Mushroom ML Lab**: 
-![Mushroom ML Lab](https://avi-chavan-96.sirv.com/mushroom-github/ml1.png)
+![Mushroom ML Lab](https://avi-chavan-96.sirv.com/Projects/mushroom-github/ml1.png)
 
-![Mushroom ML Lab](https://avi-chavan-96.sirv.com/mushroom-github/ml2.png)
+![Mushroom ML Lab](https://avi-chavan-96.sirv.com/Projects/mushroom-github/ml2.png)
 
-![Mushroom ML Lab](https://avi-chavan-96.sirv.com/mushroom-github/ml3.png)
+![Mushroom ML Lab](https://avi-chavan-96.sirv.com/Projects/mushroom-github/ml3.png)
 
-![Mushroom ML Lab](https://avi-chavan-96.sirv.com/mushroom-github/ml4.png)
+![Mushroom ML Lab](https://avi-chavan-96.sirv.com/Projects/mushroom-github/ml4.png)
 
 - **Mushroom Wisdom**: 
-![Mushroom Wisdom](https://avi-chavan-96.sirv.com/mushroom-github/mw.png)
+![Mushroom Wisdom](https://avi-chavan-96.sirv.com/Projects/mushroom-github/mw.png)
 
 - **Gallery**: 
-![Mushroom Wisdom](https://avi-chavan-96.sirv.com/mushroom-github/gallery.png)
+![Mushroom Gallery](https://avi-chavan-96.sirv.com/Projects/mushroom-github/gallery.png)
 
 > *(Real screenshot of web-app)*
 ---
